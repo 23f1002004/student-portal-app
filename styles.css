@@ -1,11 +1,18 @@
 /* Reset and Base Styles */
 :root {
-    --primary-color: #3f51b5; /* Indigo */
-    --secondary-color: #f4f4f9;
+    --primary-color: #3f51b5; /* Indigo (Deep Blue) */
+    --primary-light: #7986cb;
+    --secondary-color: #f0f4f8; /* Very light background */
     --text-color: #333;
-    --header-bg: #2c3e50; /* Darker header */
-    --active-status-color: #4CAF50;
-    --inactive-status-color: #f44336;
+    --text-secondary: #555;
+    --header-bg: var(--primary-color);
+    --card-bg: #ffffff;
+    --border-color: #e0e0e0;
+    --success-color: #4CAF50;
+    --danger-color: #F44336;
+    --status-active: var(--success-color);
+    --status-inactive: var(--danger-color);
+    --status-pending: #FFC107;
 }
 
 * {
@@ -15,96 +22,124 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--secondary-color);
     color: var(--text-color);
     line-height: 1.6;
 }
 
-/* Header Styles */
-header {
-    background-color: var(--header-bg);
+/* Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    background: var(--header-bg);
     color: white;
     padding: 20px 0;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-h1 {
-    margin-bottom: 5px;
-    font-size: 2.2em;
+.header h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
 }
 
-h2 {
-    font-weight: 300;
-    font-size: 1.2em;
-    opacity: 0.8;
-}
-
-/* Main Content and Container */
-.portal-container {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 20px;
-    background: white;
+/* Search Bar */
+.search-container {
+    padding: 15px 20px;
+    background-color: var(--primary-light);
     border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 25px;
 }
 
-/* Table Styles (Roster) */
-table {
+.search-input {
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-thead th {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 15px;
-    text-align: left;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-}
-
-tbody tr {
-    border-bottom: 1px solid #eee;
-}
-
-tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-tbody tr:hover {
-    background-color: #e6e6ff; /* Light hover effect */
-    cursor: default;
-}
-
-td {
     padding: 12px 15px;
-    vertical-align: middle;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    outline: none;
+    transition: box-shadow 0.3s;
 }
 
-/* Status Styling */
-.status {
+.search-input:focus {
+    box-shadow: 0 0 0 3px rgba(63, 81, 181, 0.4);
+}
+
+/* Student Roster Design (Grid/List View) */
+.roster-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.student-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.student-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.student-card h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.student-card p {
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+    font-size: 0.95em;
+}
+
+.student-card .detail-label {
     font-weight: 600;
+    color: var(--text-color);
+    display: inline-block;
+    min-width: 80px;
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    font-weight: bold;
     text-transform: uppercase;
-    font-size: 0.9em;
+    display: inline-block;
+    margin-top: 10px;
 }
 
 .status-active {
-    color: var(--active-status-color);
+    background-color: var(--success-color);
+    color: white;
 }
 
 .status-inactive {
-    color: var(--inactive-status-color);
+    background-color: var(--danger-color);
+    color: white;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    margin-top: 30px;
-    color: #888;
-    font-size: 0.8em;
+.status-pending {
+    background-color: var(--status-pending);
+    color: var(--text-color);
 }
+
+/* Hidden state for search filtering */
+.hidden {
+    display: none !important;
+}
+<!-- updated: 2025-10-17T17:13:16.442184 -->
