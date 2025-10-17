@@ -1,17 +1,16 @@
-# Simple Student Portal (HTML & CSS)
+# Expert Student Portal (HTML, CSS, & JavaScript)
 
-This is a minimal, static web application designed to demonstrate a basic student roster or portal view using only HTML structure and CSS styling.
+This is an improved, static web application designed to demonstrate a modern student roster and portal view, leveraging HTML structure, clean CSS styling, and dynamic filtering using JavaScript.
 
 ## Features
 
-*   **Student Roster:** Displays essential information (ID, Name, Grade, Major, Status) in a clear table format.
-*   **Responsive Design:** Basic use of `max-width` to constrain the layout.
-*   **Clear Styling:** Uses basic colors, padding, and hover effects for enhanced readability (zebra striping on the table).
-*   **Status Indicators:** Visually highlights active and inactive student statuses using color codes.
+*   **Clean & Modern Design:** Utilizes a card-based layout (`roster-grid`) and a refined color palette for better readability and aesthetics.
+*   **Search Functionality:** Dynamic, case-insensitive search implemented in JavaScript allows users to instantly filter the roster by student name, ID, or enrolled course.
+*   **Responsive Layout:** Designed to look good on various screen sizes (via CSS Grid/Flexbox).
+*   **Status Indicators:** Visual badges to quickly identify student status (Active, Inactive, Pending).
 
-## Usage
+## Tech Stack
 
-1.  Clone or download the repository.
-2.  Open `index.html` in any modern web browser.
-
-No server or complex setup is required as this is a purely static front-end application.
+*   HTML5
+*   CSS3 (Variables, Grid)
+*   Vanilla JavaScript
