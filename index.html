@@ -3,82 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Portal Roster</title>
-    <link rel="stylesheet" href="styles.css?v=1760700710">
+    <title>Student Portal Roster | Improved</title>
+    <link rel="stylesheet" href="styles.css?v=1760701396">
 </head>
 <body>
-    <header>
-        <h1>University Student Portal</h1>
-        <h2>Active Roster: Fall 2024</h2>
+
+    <header class="header">
+        <div class="container">
+            <h1>Expert Student Portal</h1>
+            <p>Roster Management System</p>
+        </div>
     </header>
 
-    <main class="portal-container">
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Student Name</th>
-                    <th>Grade Level</th>
-                    <th>Major</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1001</td>
-                    <td>Alice Johnson</td>
-                    <td>11</td>
-                    <td>Computer Science</td>
-                    <td class="status status-active">Active</td>
-                </tr>
-                <tr>
-                    <td>1002</td>
-                    <td>Ben Smith</td>
-                    <td>12</td>
-                    <td>Mechanical Engineering</td>
-                    <td class="status status-active">Active</td>
-                </tr>
-                <tr>
-                    <td>1003</td>
-                    <td>Carlos Velez</td>
-                    <td>10</td>
-                    <td>Biology</td>
-                    <td class="status status-active">Active</td>
-                </tr>
-                <tr>
-                    <td>1004</td>
-                    <td>Diana Rivas</td>
-                    <td>9</td>
-                    <td>Undeclared</td>
-                    <td class="status status-inactive">On Leave</td>
-                </tr>
-                <tr>
-                    <td>1005</td>
-                    <td>Ethan Hunt</td>
-                    <td>12</td>
-                    <td>Physics</td>
-                    <td class="status status-active">Active</td>
-                </tr>
-                <tr>
-                    <td>1006</td>
-                    <td>Fiona Greene</td>
-                    <td>11</td>
-                    <td>Art History</td>
-                    <td class="status status-active">Active</td>
-                </tr>
-                <tr>
-                    <td>1007</td>
-                    <td>George Harris</td>
-                    <td>9</td>
-                    <td>Mathematics</td>
-                    <td class="status status-active">Active</td>
-                </tr>
-            </tbody>
-        </table>
+    <main class="container">
+        
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search students by name, ID, or course...">
+        </div>
+
+        <section id="studentRoster" class="roster-grid">
+            
+            <!-- Student Card 1 -->
+            <div class="student-card" data-name="Alice Johnson" data-id="1001" data-course="Computer Science">
+                <h3>Alice Johnson</h3>
+                <p><span class="detail-label">ID:</span> 1001</p>
+                <p><span class="detail-label">Course:</span> Computer Science</p>
+                <p><span class="detail-label">Email:</span> alice@school.edu</p>
+                <div class="card-footer">
+                    <span class="status-badge status-active">Active</span>
+                </div>
+            </div>
+            
+            <!-- Student Card 2 -->
+            <div class="student-card" data-name="Bob Smith" data-id="1002" data-course="Mechanical Engineering">
+                <h3>Bob Smith</h3>
+                <p><span class="detail-label">ID:</span> 1002</p>
+                <p><span class="detail-label">Course:</span> Mechanical Engineering</p>
+                <p><span class="detail-label">Email:</span> bob@school.edu</p>
+                <div class="card-footer">
+                    <span class="status-badge status-inactive">Inactive</span>
+                </div>
+            </div>
+
+            <!-- Student Card 3 -->
+            <div class="student-card" data-name="Charlie Brown" data-id="1003" data-course="Literature">
+                <h3>Charlie Brown</h3>
+                <p><span class="detail-label">ID:</span> 1003</p>
+                <p><span class="detail-label">Course:</span> Literature</p>
+                <p><span class="detail-label">Email:</span> charlie@school.edu</p>
+                <div class="card-footer">
+                    <span class="status-badge status-active">Active</span>
+                </div>
+            </div>
+            
+             <!-- Student Card 4 -->
+            <div class="student-card" data-name="Diana Prince" data-id="1004" data-course="History">
+                <h3>Diana Prince</h3>
+                <p><span class="detail-label">ID:</span> 1004</p>
+                <p><span class="detail-label">Course:</span> History</p>
+                <p><span class="detail-label">Email:</span> diana@school.edu</p>
+                <div class="card-footer">
+                    <span class="status-badge status-pending">Pending</span>
+                </div>
+            </div>
+
+             <!-- Student Card 5 -->
+            <div class="student-card" data-name="Evan Miller" data-id="1005" data-course="Computer Science">
+                <h3>Evan Miller</h3>
+                <p><span class="detail-label">ID:</span> 1005</p>
+                <p><span class="detail-label">Course:</span> Computer Science</p>
+                <p><span class="detail-label">Email:</span> evan@school.edu</p>
+                <div class="card-footer">
+                    <span class="status-badge status-active">Active</span>
+                </div>
+            </div>
+
+        </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 Simple Student Portal Demo</p>
-    </footer>
+    <script src="script.js?v=1760701396"></script>
 </body>
 </html>
+<!-- updated: 2025-10-17T17:13:16.441369 -->
