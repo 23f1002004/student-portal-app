@@ -7,11 +7,12 @@ on:
   workflow_dispatch: # allows manual trigger
 
 jobs:
-  daily-commit:
+  daily-commit-by-23f1002004-ds-study-iitm-ac-in:
+    name: Daily Commit Job by 23f1002004@ds.study.iitm.ac.in
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write   # 👈 this allows the workflow to push changes
+      contents: write   # allows pushing changes
 
     steps:
       - name: Checkout repo
