@@ -7,22 +7,22 @@ on:
   workflow_dispatch: # allows manual trigger
 
 jobs:
-  daily-commit-by-23f1002004-ds-study-iitm-ac-in:
-    name: Daily Commit Job by 23f1002004@ds.study.iitm.ac.in
+  daily-commit:
+    name: Daily Commit by 23f1002004@ds.study.iitm.ac.in
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write   # allows pushing changes
+      contents: write
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository by 23f1002004@ds.study.iitm.ac.in
         uses: actions/checkout@v4
 
-      - name: Add daily commit step by 23f1002004@ds.study.iitm.ac.in
+      - name: Commit changes by 23f1002004@ds.study.iitm.ac.in
         run: |
           echo "Last updated on $(date)" >> daily-update.txt
           git config --global user.name "github-actions[bot]"
           git config --global user.email "23f1002004@ds.study.iitm.ac.in"
           git add daily-update.txt
-          git commit -m "Daily commit: $(date)" || echo "No changes to commit"
+          git commit -m "Daily commit by 23f1002004@ds.study.iitm.ac.in on $(date)" || echo "No changes to commit"
           git push https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git HEAD:main
