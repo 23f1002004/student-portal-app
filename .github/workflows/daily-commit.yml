@@ -1,4 +1,5 @@
 name: Daily Commit by 23f1002004@ds.study.iitm.ac.in
+run-name: Daily Commit run by 23f1002004@ds.study.iitm.ac.in
 
 on:
   schedule:
@@ -7,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  daily-commit-by-23f1002004-ds-study-iitm-ac-in:
+  daily-commit:
     name: Daily Commit Job by 23f1002004@ds.study.iitm.ac.in
     runs-on: ubuntu-latest
 
