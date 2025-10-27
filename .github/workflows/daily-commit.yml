@@ -1,5 +1,5 @@
 name: 23f1002004@ds.study.iitm.ac.in
-run-name: Daily Commit run by 23f1002004@ds.study.iitm.ac.in
+run-name: 23f1002004@ds.study.iitm.ac.in
 
 on:
   schedule:
@@ -9,7 +9,7 @@ on:
 
 jobs:
   daily-commit:
-    name: Daily Commit Job by 23f1002004@ds.study.iitm.ac.in
+    name: 23f1002004@ds.study.iitm.ac.in
     runs-on: ubuntu-latest
 
     permissions:
@@ -19,7 +19,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Commit changes by 23f1002004@ds.study.iitm.ac.in
+      - name: 23f1002004@ds.study.iitm.ac.in
         run: |
           echo "Last updated on $(date)" >> daily-update.txt
           git config --global user.name "github-actions[bot]"
