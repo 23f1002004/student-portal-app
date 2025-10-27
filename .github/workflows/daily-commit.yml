@@ -10,15 +10,18 @@ jobs:
   daily-commit:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write   # 👈 this allows the workflow to push changes
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
 
       - name: Add daily commit step by 23f1002004@ds.study.iitm.ac.in
         run: |
-          echo "Last updated on $(date)" > daily-update.txt
+          echo "Last updated on $(date)" >> daily-update.txt
           git config --global user.name "github-actions[bot]"
           git config --global user.email "23f1002004@ds.study.iitm.ac.in"
           git add daily-update.txt
-          git commit -m "Daily commit: $(date)"
-          git push
+          git commit -m "Daily commit: $(date)" || echo "No changes to commit"
+          git push https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git HEAD:main
