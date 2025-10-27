@@ -1,21 +1,21 @@
-name: Daily Commit by 23f1002004@ds.study.iitm.ac.in
+name: Daily Commit Workflow
 
 on:
   schedule:
     # Runs every day at 07:00 UTC (12:30 PM IST)
     - cron: "0 7 * * *"
-  workflow_dispatch: # allows manual trigger
+  workflow_dispatch:
 
 jobs:
-  daily-commit:
-    name: Daily Commit by 23f1002004@ds.study.iitm.ac.in
+  daily-commit-by-23f1002004-ds-study-iitm-ac-in:
+    name: Daily Commit Job by 23f1002004@ds.study.iitm.ac.in
     runs-on: ubuntu-latest
 
     permissions:
       contents: write
 
     steps:
-      - name: Checkout repository by 23f1002004@ds.study.iitm.ac.in
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Commit changes by 23f1002004@ds.study.iitm.ac.in
